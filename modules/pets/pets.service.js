@@ -21,11 +21,11 @@ module.exports = {
     return { cats, dogs };
   },
 
-  getDogs() {
+  getDog() {
     return pets.dogs.show();
   },
 
-  getCats() {
+  getCat() {
     return pets.cats.show();
   },
 
