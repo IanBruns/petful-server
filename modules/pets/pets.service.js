@@ -12,7 +12,7 @@ const pets = {
 store.cats.forEach(cat => pets.cats.enqueue(cat));
 store.dogs.forEach(dog => pets.dogs.enqueue(dog));
 
-// --------------------
+// ---------------------
 
 module.exports = {
   get() {
