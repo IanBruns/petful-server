@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
 
 router.delete('/', json, (req, res) => {
   const { type } = req.body;
+  console.log(type);
   Pets.dequeue(type);
   const pets = Pets.get();
   return res.status(200).json(pets);
