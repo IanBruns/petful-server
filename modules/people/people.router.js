@@ -11,11 +11,23 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', json, (req, res) => {
-  const { name } = req.body;
-  const person = name;
+  // Add a new person to the queue.
+  const { person } = req.body;
+  if (!person) {
+    return res.status(400).json({ error: 'Person name is required' });
+  }
 
   People.enqueue(person);
-  res.status(204).end();
+  const people = People.get();
+  return res.status(201).json(people);
+});
+
+router.delete('/', (req, res) => {
+  // Add a new person to the queue.
+
+  People.dequeue();
+  const people = People.get();
+  return res.status(201).json(people);
 });
 
 module.exports = router;
